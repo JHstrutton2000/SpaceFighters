@@ -1,2 +1,0 @@
-//class BlackHole implements gameObject{
-//}
