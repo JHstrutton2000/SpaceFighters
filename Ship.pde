@@ -7,7 +7,7 @@ class Ship implements GameObject {
 
   Ship(PVector pos, PVector Color, boolean player) {
     this.pos = pos;
-    this.vel = new PVector();
+    this.vel = new PVector(0.01, 0);
     this.acc = new PVector();
     this.Color = Color;
     this.player = player;
@@ -20,6 +20,13 @@ class Ship implements GameObject {
       translate(pos.x, pos.y);
       rotate(vel.heading()-PI/2);
       triangle(0, 5, -3, -3, 3, -3);
+      
+      if(player && (forward || back || right || left)){
+        
+        noStroke();
+        fill(150, 25, 25);
+        ellipse(0, -4, 5, 5); 
+      }
     pop();
   }
 

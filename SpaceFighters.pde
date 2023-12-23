@@ -7,7 +7,8 @@ void setup() {
   gameObjects = new ArrayList<GameObject>();
 
   gameObjects.add(new Ship(new PVector(50, 100), new PVector(100, 100, 100), true));
-  gameObjects.add(new Ship(new PVector(100, 100), new PVector(100, 100, 100), false));
+  
+  gameObjects.add(new Astroid(new PVector(100, 100), new PVector(1, 0), new PVector(100, 100, 100), 100));
 }
 
 void draw() {
