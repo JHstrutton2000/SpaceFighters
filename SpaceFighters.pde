@@ -8,7 +8,12 @@ void setup() {
 
   gameObjects.add(new Ship(new PVector(50, 100), new PVector(100, 100, 100), true));
   
-  gameObjects.add(new Astroid(new PVector(100, 100), new PVector(1, 0), new PVector(100, 100, 100), 100));
+  //gameObjects.add(new Astroid(new PVector(100, 100), new PVector(1, 0), new PVector(100, 100, 100), 100));
+  WormHole w = new WormHole(new PVector(100, 100), 10);
+  
+  gameObjects.add(w);
+  gameObjects.add(new WormHole(new PVector(100, 300), 10, w));
+  
 }
 
 void draw() {
