@@ -8,7 +8,7 @@ void setup() {
   Ship player = new Ship(new PVector(50, 100), new PVector(100, 100, 100), ShipBehaviors.player);
   
   gameObjects.add(player);
-  gameObjects.add(new Ship(new PVector(300, 100), new PVector(100, 100, 100), ShipBehaviors.followTarget, player));
+  gameObjects.add(new Ship(new PVector(300, 100), new PVector(100, 100, 100), ShipBehaviors.follow, player));
 
 
 

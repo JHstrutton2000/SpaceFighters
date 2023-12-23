@@ -1,6 +1,6 @@
 enum ShipBehaviors{
   player,
   enemy,
-  followTarget,
-  attackTarget
+  follow,
+  attack
 }

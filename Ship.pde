@@ -1,7 +1,7 @@
 class Ship implements GameObject {
   PVector pos, vel, acc, Color;
   float health = DefaultShipHealth;
-  GameObject target;
+  GameObject leader;
   float r;
 
   ShipBehaviors behavior;
@@ -17,10 +17,10 @@ class Ship implements GameObject {
     r = 5.5f;
   };
 
-  Ship(PVector pos, PVector Color, ShipBehaviors behavior, GameObject target) {
+  Ship(PVector pos, PVector Color, ShipBehaviors behavior, GameObject leader) {
     this(pos, Color, behavior);
 
-    this.target = target;
+    this.leader = leader;
   };
 
   void draw() {
@@ -77,9 +77,9 @@ class Ship implements GameObject {
         this.shoot();
         fire = false;
       }
-    } else if (behavior == ShipBehaviors.followTarget) {
-      if (target != null) {
-        PVector force = target.getPos().copy().sub(pos);
+    } else if (behavior == ShipBehaviors.follow) {
+      if (leader != null) {
+        PVector force = leader.getPos().copy().sub(pos);
         moving = true;
         
         if(force.mag() < 25){
